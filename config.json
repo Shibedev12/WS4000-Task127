@@ -1,0 +1,32 @@
+{
+  "readme_slowdraw": "slow draw does the slow animations so you can see the paint ins",
+  "readme_lot8scue": "lot8s_cue cues the sim on the 8s.",
+  "readme_serversideaudio": "serverside_audio disables the built in music so that you can handle it in your streaming platform of choice",
+  "readme_loop": "the loop command is the difference between weatherscan: the 4000 saga and a plain old domestic 4000.",
+  "readme_debug": "debug you shouldnt need. its just a window rt that shows logging info.",
+  "readme_mixedcase": "this setting toggles all caps in the local forecast segment's data.",
+  "readme_selectedflavor": "E92 (36hr, EF, Radar), DE02 (CC, 36hr, EF, Radar). Currently you can pick between these two (they are both 1 minute). ",
+  "readme_modern": "this setting toggles the modern mode which is my take on a modern 4000.",
+  "readme_locationcode": "This setting is how you set your 4000's location. Just 1 ICAO code and thats it! No ICAO code? Too bad. Get one.",
+  "slow_draw": "n",
+  "lot8s_cue": "y",
+  "serverside_audio": false,
+  "loop": "n",
+  "debug": false,
+  "mixed_case": false,
+  "selectedflavor": "DE02",
+  "modern": true,
+  "locationcode": "KHRO", 
+
+
+
+  "dont touch the stuff down here": "please",
+    "api": {
+    "twc": "e1f10a1e78da46f5b10a1e78da96f525",
+    "mapbox": "pk.eyJ1Ijoid2VhdGhlcmdyb3VwIiwiYSI6ImNrbmVzNnFwaDBidTkycXBlb3hveHNjazEifQ.P1Sl2hlkmo5jhmhqOUSt5A"
+  },
+  "basemap_path": "./radar_basemaps/newbasemap.png",
+  "radar_map_width": 4100,
+  "radar_map_height": 1920,
+  "radar_zoom": 10
+}

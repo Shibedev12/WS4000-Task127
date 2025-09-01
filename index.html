@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task127 Private Beta</title>
+    <link rel="stylesheet" href="ws4000.css">
+</head>
+<body class="text-only">
+        <script>
+            document.body.classList.remove('text-only');
+        </script>
+    <div class="content-container">
+        
+        <img src="./header/twclogo_main.png" alt="The Weather Channel" class="twc-logo">
+        
+        <img src="./LDL.png" alt="LDL" class="ldl-image">
+    <div class="ldl-text"><span id="ldl-text-span"></span></div>
+        
+    <img src="" alt="Radar Basemap" class="radar-basemap" id="radar-basemap">
+        
+        <img src="" alt="Radar Data" class="radar-data">
+        
+        <img src="./centerbox/layer_farthest_back_0.png" alt="Layer 0" class="centerbox-layer layer-0">
+    <img src="./centerbox/layer_back_1.png" alt="Layer 1" class="centerbox-layer layer-1">
+    <img src="./centerbox/extendedforecast.png" alt="EF Layer" class="centerbox-layer ef-layer">
+        <img src="./centerbox/layer_back_2.png" alt="Layer 2" class="centerbox-layer layer-2">
+        <img src="./centerbox/layer_back_3.png" alt="Layer 3" class="centerbox-layer layer-3">
+        <img src="./centerbox/layer_back_4.png" alt="Layer 4" class="centerbox-layer layer-4">
+        <img src="./centerbox/layer_back_5.png" alt="Layer 5" class="centerbox-layer layer-5">
+        <img src="./centerbox/layer_front_6.png" alt="Layer 6" class="centerbox-layer layer-6">
+
+    <div class="header-line header-line-top">
+            <span class="header-text-shadow line1">Current</span>
+            <span class="header-text line1">Current</span>
+    </div>
+    <div class="header-line header-line-bottom">
+            <span class="header-text-shadow line2">Conditions</span>
+            <span class="header-text line2">Conditions</span>
+        </div>
+        
+        <div class="current-location"></div>
+        
+        <div class="current-temp">74°</div>
+        
+        <div class="current-condition">Mostly Cloudy</div>
+        
+        <img src="./currentconditions+extendedforecast_icons/Mostly-Cloudy.gif" alt="Mostly Cloudy" class="weather-icon">
+        
+        <div class="current-data-labels">
+            <div>Humidity:</div>
+            <div>Dewpoint:</div>
+            <div>Ceiling:</div>
+            <div>Visibility:</div>
+            <div>Pressure:</div>
+            <div>Wind Chill:</div>
+        </div>
+        
+        <div class="data-humidity">32%</div>
+        <div class="data-dewpoint">43°</div>
+        <div class="data-ceiling">Unlimited</div>
+        <div class="data-visibility">10.0 mi.</div>
+        <div class="data-pressure">27.91</div>
+        <div class="data-windchill">74°</div>
+        
+        <div class="current-wind">Wind: NE &nbsp;12</div>
+        <div class="current-wind-line2"> </div>
+        
+        <span class="clock clock-time" id="clock-time">10:27:45 PM</span>
+        <span class="clock clock-date" id="clock-date">MON AUG  5</span>
+        
+        <img src="./header/header.png" alt="Header" class="header-bottom">
+        
+        <img src="./header/radar_header.png" alt="Radar Header" class="radar-header">
+
+        <!-- Extended Forecast simple text overlay (best-effort placement) -->
+        <div id="ef-overlay">
+            <div class="ef-row">
+                <div class="ef-col">
+                    <div class="ef-dow">SUN</div>
+                    <div class="ef-icon-wrap">
+                        <img class="ef-icon" src="./currentconditions+extendedforecast_icons/null.png" alt="">
+                    </div>
+                    <div class="ef-cond">Sunny</div>
+                    <div class="ef-lhi">
+                        <div class="ef-lhi-row ef-lhi-row1">
+                            <span class="ef-lo-lbl">Lo</span>    <span class="ef-hi-lbl">Hi</span>
+                        </div>
+                        <div class="ef-lhi-row ef-lhi-row2">
+                            <span class="ef-lo-val">10</span>    <span class="ef-hi-val">45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ef-col">
+                    <div class="ef-dow">MON</div>
+                    <div class="ef-icon-wrap">
+                        <img class="ef-icon" src="./currentconditions+extendedforecast_icons/null.png" alt="">
+                    </div>
+                    <div class="ef-cond">Partly Cloudy</div>
+                    <div class="ef-lhi">
+                        <div class="ef-lhi-row ef-lhi-row1">
+                            <span class="ef-lo-lbl">Lo</span>    <span class="ef-hi-lbl">Hi</span>
+                        </div>
+                        <div class="ef-lhi-row ef-lhi-row2">
+                            <span class="ef-lo-val">18</span>    <span class="ef-hi-val">47</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ef-col">
+                    <div class="ef-dow">TUE</div>
+                    <div class="ef-icon-wrap">
+                        <img class="ef-icon" src="./currentconditions+extendedforecast_icons/null.png" alt="">
+                    </div>
+                    <div class="ef-cond">Mostly Sunny</div>
+                    <div class="ef-lhi">
+                        <div class="ef-lhi-row ef-lhi-row1">
+                            <span class="ef-lo-lbl">Lo</span>    <span class="ef-hi-lbl">Hi</span>
+                        </div>
+                        <div class="ef-lhi-row ef-lhi-row2">
+                            <span class="ef-lo-val">19</span>    <span class="ef-hi-val">34</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="header-sequence">
+        <div class="header-group">
+            <span class="header-text yellow-text">Current</span><br>
+            <span class="header-text yellow-text">Conditions</span>
+        </div>
+        <div class="header-group">
+            <span class="header-text yellow-text">Local</span><br>
+            <span class="header-text yellow-text">Forecast</span>
+        </div>
+        <div class="header-group">
+            <span class="header-text white-text">(null)</span><br>
+            <span class="header-text yellow-text">Extended Forecast</span>
+        </div>
+    </div>
+
+    <audio id="weatherstar-music" loop autoplay>
+    </audio>
+
+    <script src="clock.js"></script>
+    <script src="buffermanager.js"></script>
+    <script src="render.js"></script>
+    <script src="data.js"></script>
+    <script>
+class WeatherStarMusic {
+    constructor() {
+        this.musicTracks = [
+            './music/Trammel Starks 1 Track 1.mp3',
+            './music/Trammel Starks 1 Track 2.mp3',
+            './music/Trammel Starks 1 Track 3.mp3',
+            './music/Trammel Starks 1 Track 4.mp3',
+            './music/Trammel Starks 1 Track 5.mp3',
+            './music/Trammel Starks 1 Track 6.mp3',
+            './music/Trammel Starks 1 Track 7.mp3',
+            './music/Trammel Starks 1 Track 8.mp3',
+            './music/Trammel Starks 1 Track 9.mp3',
+            './music/Trammel Starks 1 Track 10.mp3',
+            './music/Trammel Starks 1 Track 11.mp3',
+            './music/Trammel Starks 1 Track 12.mp3',
+            './music/Trammel Starks 1 Track 13.mp3',
+            './music/Trammel Starks 2 Track 1.mp3',
+            './music/Trammel Starks 2 Track 2.mp3',
+            './music/Trammel Starks 2 Track 3.mp3',
+            './music/Trammel Starks 2 Track 4.mp3',
+            './music/Trammel Starks 2 Track 5.mp3',
+            './music/Trammel Starks 2 Track 6.mp3',
+            './music/Trammel Starks 2 Track 7.mp3',
+            './music/Trammel Starks 2 Track 8.mp3',
+            './music/Trammel Starks 2 Track 9.mp3',
+            './music/Trammel Starks 2 Track 10.mp3',
+            './music/Trammel Starks 3 Track 1.mp3',
+            './music/Trammel Starks 3 Track 2.mp3',
+            './music/Trammel Starks 3 Track 3.mp3',
+            './music/Trammel Starks 3 Track 4.mp3',
+            './music/Trammel Starks 3 Track 5.mp3',
+            './music/Trammel Starks 3 Track 6.mp3',
+            './music/Trammel Starks 3 Track 7.mp3'
+        ];
+        this.audioElement = document.getElementById('weatherstar-music');
+    }
+    
+    pickRandomTrack() {
+        const randomIndex = Math.floor(Math.random() * this.musicTracks.length);
+        return this.musicTracks[randomIndex];
+    }
+    
+    init() {
+        const selectedTrack = this.pickRandomTrack();
+        console.log(`WeatherSTAR 4000 playing: ${selectedTrack}`);
+        
+        this.audioElement.src = selectedTrack;
+        this.audioElement.volume = 0.6;
+        
+        this.audioElement.addEventListener('ended', () => {
+            const nextTrack = this.pickRandomTrack();
+            console.log(`Next track: ${nextTrack}`);
+            this.audioElement.src = nextTrack;
+            this.audioElement.play();
+        });
+        
+        this.audioElement.play().catch(error => {
+            console.log('Autoplay blocked - music will start on first user interaction');
+            
+            const startMusic = () => {
+                this.audioElement.play();
+                document.removeEventListener('click', startMusic);
+                document.removeEventListener('keydown', startMusic);
+            };
+            
+            document.addEventListener('click', startMusic);
+            document.addEventListener('keydown', startMusic);
+        });
+    }
+}
+
+let config = {};
+let clock = null;
+let renderer = null;
+let musicPlayer = null;
+let weatherData = null;
+
+async function loadConfig() {
+    try {
+        const response = await fetch('config.json');
+        config = await response.json();
+        
+
+        
+        clock = new Clock();
+        renderer = new Renderer(config);
+        musicPlayer = new WeatherStarMusic();
+        weatherData = new WeatherData();
+        window.weatherData = weatherData;
+        
+        if (config.serverside_audio === true) {
+            console.log('Serverside audio enabled - muting local music');
+            musicPlayer = null;
+        } else {
+            musicPlayer = new WeatherStarMusic();
+        }
+        
+        const basemapImg = document.getElementById('radar-basemap');
+        const basemapPath = config.basemap_path || './RadarBaseMap.png';
+        if (basemapImg && basemapPath) basemapImg.src = basemapPath;
+
+        clock.init();
+        await weatherData.init();
+        renderer.init();
+        
+        if (musicPlayer) {
+            musicPlayer.init();
+        }
+        
+        if (config.debug_mode === 'y') {
+            const debugOverlay = document.getElementById('debug-overlay');
+            if (debugOverlay) {
+                debugOverlay.style.display = 'block';
+                debugOverlay.textContent = 'CONFIG.JSON:\n' + JSON.stringify(config, null, 2);
+            }
+        }
+    } catch (error) {
+        console.error('Failed to load config:', error.message);
+    }
+}
+
+window.addEventListener('load', loadConfig);
+
+if (typeof EventSource !== 'undefined') {
+    const eventSource = new EventSource('/live-reload');
+    
+    eventSource.onmessage = function(event) {
+        if (event.data === 'reload') {
+            console.log('File changed - reloading page');
+            window.location.reload();
+        }
+    };
+    
+    eventSource.onerror = function(event) {
+        console.log('Live reload connection error, retrying');
+    };
+}
+    </script>
+</body>
+</html>
